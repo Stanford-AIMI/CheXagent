@@ -8,7 +8,7 @@
 </div>
 
 <p align="center">
-📝 <a href="https://arxiv.org/" target="_blank">Paper</a> • 🤗 <a href="https://huggingface.co/StanfordAIMI/CheXagent-8b/" target="_blank">Hugging Face</a> • 🧩 <a href="https://github.com/Stanford-AIMI/CheXagent" target="_blank">Github</a> • 🪄 <a href="https://stanford-aimi.github.io/chexagent.html" target="_blank">Project</a> • 🤖 <a href="http://34.31.232.110:8888/" target="_blank">Demo</a>
+📝 <a href="https://arxiv.org/" target="_blank">Paper</a> • 🤗 <a href="https://huggingface.co/StanfordAIMI/CheXagent-8b/" target="_blank">Hugging Face</a> • 🧩 <a href="https://github.com/Stanford-AIMI/CheXagent" target="_blank">Github</a> • 🪄 <a href="https://stanford-aimi.github.io/chexagent.html" target="_blank">Project</a>
 </p>
 
 <div align="center">
