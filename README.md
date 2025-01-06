@@ -14,20 +14,7 @@
 <div align="center">
 </div>
 
->> Note that the repository and models are only for research purposes and not for clinical use.
-
-## 🎬 Get started
-![Get Started (CheXagent)](assets/chexagent_intro.gif)
-
-Run the script to play with CheXagent:
-```shell
-python demos/demos/run_examples.py
-```
-or run the following command to interact with CheXagent through a web demo hosted by Gradio:
-
-```shell
-python demos/app_demos.py
-```
+> Note that the repository and models are only for research purposes and not for clinical use.
 
 ## 🤖 Model
 CheXagent and its "byproducts" are available on Hugging Face:
@@ -65,6 +52,19 @@ class CheXagent:
 ```
 
 </details>
+
+## 🎬 Get started
+![Get Started (CheXagent)](assets/chexagent_intro.gif)
+
+Run the script to play with CheXagent:
+```shell
+python demos/demos/run_examples.py
+```
+or run the following command to interact with CheXagent through a web demo hosted by Gradio:
+
+```shell
+python demos/app_demos.py
+```
 
 ## 📚 Data
 
