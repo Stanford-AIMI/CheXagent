@@ -8,44 +8,95 @@
 </div>
 
 <p align="center">
-📝 <a href="https://arxiv.org/abs/2401.12208" target="_blank">Paper</a> • 🤗 <a href="https://huggingface.co/StanfordAIMI/CheXagent-8b/" target="_blank">Hugging Face</a> • 🧩 <a href="https://github.com/Stanford-AIMI/CheXagent" target="_blank">Github</a> • 🪄 <a href="https://stanford-aimi.github.io/chexagent.html" target="_blank">Project</a>
+📝 <a href="https://arxiv.org/abs/2401.12208" target="_blank">Paper</a> • 🤗 <a href="https://huggingface.co/collections/StanfordAIMI/chexagent-and-its-byproducts-677bd19b15ed5fab582f288a/" target="_blank">Hugging Face</a> • 🧩 <a href="https://github.com/Stanford-AIMI/CheXagent" target="_blank">Github</a> • 🪄 <a href="https://stanford-aimi.github.io/chexagent.html" target="_blank">Project</a>
 </p>
 
 <div align="center">
 </div>
 
-## ✨ Latest News
+>> Note that the repository and models are only for research purposes and not for clinical use.
 
-- [12/15/2023]: Model released in [Hugging Face](https://huggingface.co/StanfordAIMI/CheXagent-8b/).
+## 🎬 Get started
+![Get Started (CheXagent)](assets/chexagent_intro.gif)
 
-## 🎬 Get Started
+Run the script to play with CheXagent:
+```shell
+python demos/demos/run_examples.py
+```
+or run the following command to interact with CheXagent through a web demo hosted by Gradio:
+
+```shell
+python demos/app_demos.py
+```
+
+## 🤖 Model
+CheXagent and its "byproducts" are available on Hugging Face:
+
+| Model            | Link                                                                                                                 | Note                                                                       |
+|------------------|----------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------|
+| CheXagent        | [Huggingface](https://huggingface.co/StanfordAIMI/CheXagent-2-3b)                                                    | The CheXagent model                                                        |
+| Vision Encoder   | [Huggingface](https://huggingface.co/collections/StanfordAIMI/chexagent-and-its-byproducts-677bd19b15ed5fab582f288a) | Eight SigLIP/CLIP models of various sizes adapted for CXR                  |
+| Language Decoder | [Huggingface](https://huggingface.co/StanfordAIMI/RadPhi-2)                                                          | A language model adapted for clinical use cases (especially for radiology) |
+
+Check out `model_chexagent/chexagent.py` for the following usages:
+
+<details>
+<summary>Expand to check the overview.</summary>
 
 ```python
-import io
+class CheXagent:
+    def generate(self, paths, prompt): ...
+    def view_classification(self, path): ...
+    def view_matching(self, paths): ...
+    def binary_disease_classification(self, paths, disease_name): ...
+    def disease_identification(self, paths, disease_names): ...
+    def findings_generation(self, paths, indication): ...
+    def findings_generation_section_by_section(self, paths): ...
+    def image_text_matching(self, paths, text): ...
+    def plot_image(self, path, response, save_path): ...
+    def phrase_grounding(self, path, phrase, save_path): ...
+    def abnormality_detection(self, path, disease_name, save_path): ...
+    def chest_tube_detection(self, path, save_path): ...
+    def rib_fracture_detection(self, path, save_path): ...
+    def foreign_objects_detection(self, path, save_path): ...
+    def temporal_image_classification(self, paths, disease_name): ...
+    def findings_summarization(self, findings): ...
+    def named_entity_recognition(self, text): ...
+```
 
-import requests
-import torch
-from PIL import Image
-from transformers import AutoModelForCausalLM, AutoProcessor, GenerationConfig
+</details>
 
-# step 1: Setup constant
-device = "cuda"
-dtype = torch.float16
+## 📚 Data
 
-# step 2: Load Processor and Model
-processor = AutoProcessor.from_pretrained("StanfordAIMI/CheXagent-8b", trust_remote_code=True)
-generation_config = GenerationConfig.from_pretrained("StanfordAIMI/CheXagent-8b")
-model = AutoModelForCausalLM.from_pretrained("StanfordAIMI/CheXagent-8b", torch_dtype=dtype, trust_remote_code=True)
+Run the following command to compile the CheXinstruct dataset:
 
-# step 3: Fetch the images
-image_path = "https://upload.wikimedia.org/wikipedia/commons/3/3b/Pleural_effusion-Metastatic_breast_carcinoma_Case_166_%285477628658%29.jpg"
-images = [Image.open(io.BytesIO(requests.get(image_path).content)).convert("RGB")]
+```shell
+python data_chexinstruct/compile_chexinstruct.py
+```
 
-# step 4: Generate the Findings section
-prompt = f'Describe "Airway"'
-inputs = processor(images=images, text=f" USER: <s>{prompt} ASSISTANT: <s>", return_tensors="pt").to(device=device, dtype=dtype)
-output = model.generate(**inputs, generation_config=generation_config)[0]
-response = processor.tokenizer.decode(output, skip_special_tokens=True)
+Run the following command to visualize the CheXinstruct dataset:
+
+```shell
+python data_chexinstruct/dataset_visualizer.py
+```
+
+## ✨ Evaluation
+
+The scripts for evaluating FMs on CheXbench are in
+
+```shell
++--evaluation_chexbench
+|+--axis_1_image_perception
+|+--axis_2_image_text_reasoning
+|+--axis_3_text_generation
+```
+
+## 🩺 Clinical Reader Study
+
+We provide the reader study interface implementation for future research in this area:
+
+```shell
+python reader_study/app.py
 ```
 
 ## ✏️ Citation

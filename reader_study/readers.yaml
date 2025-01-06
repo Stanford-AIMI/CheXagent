@@ -1,0 +1,11 @@
+credentials:
+  usernames:
+    demo:
+      password: demo
+      id: 99
+      name: Demo for Attendings
+
+cookie:
+  expiry_days: 0
+  key: random_signature_key # Must be string
+  name: random_cookie_name

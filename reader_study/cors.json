@@ -1,0 +1,8 @@
+[
+	{
+		"origin": ["https://vilmedic.app/"],
+		"method": ["GET"],
+		"responseHeader": ["Content-Type"],
+		"maxAgeSeconds": 3600
+	}
+]
