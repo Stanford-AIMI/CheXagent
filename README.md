@@ -91,7 +91,7 @@ The scripts for evaluating FMs on CheXbench are in
 |+--axis_3_text_generation
 ```
 
-To check whether your environment is set up in the same way as ours, run the following command:
+**To check whether your environment is set up in the same way as ours, run the following command:**
 
 <details>
 <summary>Expand to check the command.</summary>
