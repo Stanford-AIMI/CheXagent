@@ -91,4 +91,7 @@ def main():
 
 
 if __name__ == '__main__':
+    assert os.path.exists(
+        "evaluation_chexbench/data.json"
+    ), "Please download the evaluation_chexbench/data.json file from [https://huggingface.co/datasets/StanfordAIMI/chexbench]."
     main()

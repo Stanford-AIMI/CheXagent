@@ -91,6 +91,23 @@ The scripts for evaluating FMs on CheXbench are in
 |+--axis_3_text_generation
 ```
 
+To check whether your environment is set up in the same way as ours, run the following command:
+
+<details>
+<summary>Expand to check the command.</summary>
+
+Run
+```shell
+python evaluation_chexbench/axis_3_text_generation/run_findings_generation.py
+```
+and the result should be close to the following
+
+| Macro F1 (14) | Micro F1 (14) | Macro F1 (5) | Micro F1 (5) |  Avg |
+|:-------------:|:-------------:|:------------:|:------------:|:----:|
+|      44.9     |      58.0     |     55.3     |     62.5     | 55.2 |
+
+</details>
+
 ## 🩺 Clinical Reader Study
 
 We provide the reader study interface implementation for future research in this area:
