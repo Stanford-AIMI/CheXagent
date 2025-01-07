@@ -109,7 +109,7 @@ and the result should be close to the following numbers:
 | Med-PaLM-M | 84B  |      39.8     |      53.6     |     51.6     |     57.9     | 50.7 |
 | Med-PaLM-M | 562B |      37.3     |      51.4     |     50.6     |     56.5     | 49.0 |
 | LLaVA-Rad  | 7B   |      39.5     |      57.3     |     47.7     |     57.4     | 50.5 |
-| CheXagent  | 3B   |      44.5     |      57.9     |     55.3     |     62.5     | 55.0 |
+| CheXagent  | 3B   |      44.9     |      58.0     |     55.3     |     62.5     | 55.2 |
 
 </details>
 
