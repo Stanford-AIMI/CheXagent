@@ -86,7 +86,7 @@ Run
 ```shell
 python evaluation_chexbench/axis_3_text_generation/run_findings_generation.py
 ```
-and the result should be close to the following
+and the result should be close to the following numbers:
 
 | Macro F1 (14) | Micro F1 (14) | Macro F1 (5) | Micro F1 (5) |  Avg |
 |:-------------:|:-------------:|:------------:|:------------:|:----:|
