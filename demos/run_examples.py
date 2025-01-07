@@ -128,8 +128,9 @@ def main():
     print(f'=' * 42)
 
     # Task 13: Temporal Image Classification
-    prior_image_path = "https://prod-images-static.radiopaedia.org/images/23511538/8a28003cc78f3549ac9f436dfe7dad_big_gallery.jpeg"
-    current_image_path = "https://prod-images-static.radiopaedia.org/images/23511538/8a28003cc78f3549ac9f436dfe7dad_big_gallery.jpeg"
+    # Source [https://radiopaedia.org/cases/pneumothorax-with-follow-up-of-the-regression?lang=us]
+    prior_image_path = "https://prod-images-static.radiopaedia.org/images/58478828/0._big_gallery.jpeg"
+    current_image_path = "https://prod-images-static.radiopaedia.org/images/58478832/0._big_gallery.jpeg"
     response = chexagent.temporal_image_classification([prior_image_path, current_image_path], "Pneumothorax")
     print(f'=' * 42)
     print(f'[Task 13: Temporal Image Classification]')
