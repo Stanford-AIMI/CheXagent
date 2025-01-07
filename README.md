@@ -28,7 +28,7 @@ CheXagent and its "byproducts" are available on Hugging Face:
 Check out `model_chexagent/chexagent.py` for the following usages:
 
 <details>
-<summary>Expand to check the overview.</summary>
+<summary>Expand to check the model overview.</summary>
 
 ```python
 class CheXagent:
