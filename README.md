@@ -92,6 +92,8 @@ and the result should be close to the following
 |:-------------:|:-------------:|:------------:|:------------:|:----:|
 |      44.9     |      58.0     |     55.3     |     62.5     | 55.2 |
 
+> From our experiments in replicating the baselines, the BLEU (or F1RadGraph) scores are affected by the report styles (e.g., sentence orders or even the de-id symbols ("___" in MIMIC-CXR)). [F1CheXbert](https://pypi.org/project/f1chexbert/) is relatively robust to these variations, which is important since nowadays different models are trained on different preprocessed reports (with various styles).
+
 </details>
 
 ## 📚 Data
