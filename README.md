@@ -66,23 +66,9 @@ or run the following command to interact with CheXagent through a web demo hoste
 python demos/app_demos.py
 ```
 
-## 📚 Data
-
-Run the following command to compile the CheXinstruct dataset:
-
-```shell
-python data_chexinstruct/compile_chexinstruct.py
-```
-
-Run the following command to visualize the CheXinstruct dataset:
-
-```shell
-python data_chexinstruct/dataset_visualizer.py
-```
-
 ## ✨ Evaluation
 
-The scripts for evaluating FMs on CheXbench are in
+Download the CheXbench data from [HuggingFace](https://huggingface.co/datasets/StanfordAIMI/chexbench) and put it to `evaluation_chexbench/data.json`. The scripts for evaluating FMs on CheXbench are in
 
 ```shell
 +--evaluation_chexbench
@@ -107,6 +93,20 @@ and the result should be close to the following
 |      44.9     |      58.0     |     55.3     |     62.5     | 55.2 |
 
 </details>
+
+## 📚 Data
+
+Run the following command to compile the CheXinstruct dataset:
+
+```shell
+python data_chexinstruct/compile_chexinstruct.py
+```
+
+Run the following command to visualize the CheXinstruct dataset:
+
+```shell
+python data_chexinstruct/dataset_visualizer.py
+```
 
 ## 🩺 Clinical Reader Study
 
