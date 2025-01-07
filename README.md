@@ -80,7 +80,7 @@ Download the CheXbench data from [HuggingFace](https://huggingface.co/datasets/S
 **To check whether your environment is set up in the same way as ours, run the following command:**
 
 <details>
-<summary>Expand to check the command.</summary>
+<summary>Expand to check the command</summary>
 
 Run
 ```shell
@@ -93,6 +93,23 @@ and the result should be close to the following numbers:
 |      44.9     |      58.0     |     55.3     |     62.5     | 55.2 |
 
 > A note: From our experiments in replicating the baselines, the BLEU (or F1RadGraph) scores are affected by the report styles (e.g., sentence orders or even the de-id symbols ("___" in MIMIC-CXR)). [F1CheXbert](https://pypi.org/project/f1chexbert/) is relatively robust to these variations, which is important since nowadays different models are trained on different preprocessed reports (with various styles).
+
+</details>
+
+<details>
+<summary>Comparisons with existing studies</summary>
+
+| Model      | Size |               |               |  F1CheXbert  |              |      |
+|------------|------|:-------------:|:-------------:|:------------:|:------------:|:----:|
+|            |      | Macro F1 (14) | Micro F1 (14) | Macro F1 (5) | Micro F1 (5) |  Avg |
+| GPT-4V     | -    |      20.4     |      35.5     |     19.6     |     25.8     | 25.3 |
+| MARIA-1    | 7B   |      38.6     |      55.7     |     47.7     |     56.0     | 49.5 |
+| MARIA-2    | 7B   |      41.6     |      58.1     |     50.4     |     59.1     | 52.3 |
+| Med-PaLM-M | 12B  |      37.3     |      51.4     |     50.6     |     56.5     | 49.0 |
+| Med-PaLM-M | 84B  |      39.8     |      53.6     |     51.6     |     57.9     | 50.7 |
+| Med-PaLM-M | 562B |      37.3     |      51.4     |     50.6     |     56.5     | 49.0 |
+| LLaVA-Rad  | 7B   |      39.5     |      57.3     |     47.7     |     57.4     | 50.5 |
+| CheXagent  | 3B   |      44.5     |      57.9     |     55.3     |     62.5     | 55.0 |
 
 </details>
 
